@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://b51q6xeg4gthp"]
+
+[ext_resource type="Texture2D" uid="uid://b5a8rv0532bbp" path="res://Game/Players/Blue/playerShip1_blue.png" id="1_6pm8v"]
+[ext_resource type="Script" path="res://Game/Players/Player.gd" id="1_pewy0"]
+[ext_resource type="Texture2D" uid="uid://bxvcqw0p7gjx3" path="res://Game/Players/Blue/playerShip2_blue.png" id="2_3n4jo"]
+[ext_resource type="Texture2D" uid="uid://bm1ut77di12i3" path="res://Game/Players/Blue/playerShip3_blue.png" id="3_boky5"]
+[ext_resource type="Texture2D" uid="uid://dw1kw7ba420j6" path="res://Game/Players/Green/playerShip1_green.png" id="4_o44fc"]
+[ext_resource type="Texture2D" uid="uid://1bcansnamxlj" path="res://Game/Players/Green/playerShip2_green.png" id="5_hb5o3"]
+[ext_resource type="Texture2D" uid="uid://cebc1i21sf8yf" path="res://Game/Players/Green/playerShip3_green.png" id="6_0k74e"]
+[ext_resource type="Texture2D" uid="uid://yt3fdntjidh1" path="res://Game/Players/Red/playerShip1_orange.png" id="7_x6dbu"]
+[ext_resource type="Texture2D" uid="uid://la2co7rgnfgi" path="res://Game/Players/Red/playerShip2_orange.png" id="8_7vtj6"]
+[ext_resource type="Texture2D" uid="uid://d3trwj4g7lkmd" path="res://Game/Players/Red/playerShip3_orange.png" id="9_w0twu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1bje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6pm8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3n4jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_boky5")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o44fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hb5o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0k74e")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x6dbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7vtj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w0twu")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pewy0")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v1bje")
+animation = &"blue"

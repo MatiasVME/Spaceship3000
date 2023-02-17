@@ -1,14 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceuvey5fasnx"]
+[gd_scene load_steps=6 format=3 uid="uid://ceuvey5fasnx"]
 
 [ext_resource type="Script" path="res://Game/Levels/Level.gd" id="1_jo8yb"]
 [ext_resource type="PackedScene" uid="uid://b51q6xeg4gthp" path="res://Game/Players/Player.tscn" id="1_k2ab8"]
+[ext_resource type="Texture2D" uid="uid://yydgi7xwjmrp" path="res://Art/blue.png" id="2_mewyh"]
 [ext_resource type="PackedScene" uid="uid://bvd4isox7pe3i" path="res://Game/Enemies/Enemy.tscn" id="2_mfgu1"]
+[ext_resource type="PackedScene" uid="uid://buik523d2gy73" path="res://Game/Bullet/Bullet.tscn" id="5_glx4x"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jo8yb")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 720.0
+offset_bottom = 720.0
+texture = ExtResource("2_mewyh")
+stretch_mode = 1
+
 [node name="Player" parent="." instance=ExtResource("1_k2ab8")]
 position = Vector2(360, 670)
 
-[node name="Enemy" parent="." instance=ExtResource("2_mfgu1")]
-position = Vector2(73, 64)
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(138, 64)
+limit_left = 140
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(138, 158)
+limit_left = 140
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(138, 265)
+limit_left = 140
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(238, 64)
+limit_left = 240
+limit_right = 400
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(238, 158)
+limit_left = 240
+limit_right = 400
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(238, 265)
+limit_left = 240
+limit_right = 400
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(338, 64)
+limit_left = 340
+limit_right = 500
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(338, 158)
+limit_left = 340
+limit_right = 500
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(338, 265)
+limit_left = 340
+limit_right = 500
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(438, 64)
+limit_left = 440
+limit_right = 600
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(438, 158)
+limit_left = 440
+limit_right = 600
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource("2_mfgu1")]
+position = Vector2(438, 265)
+limit_left = 440
+limit_right = 600
+
+[node name="Bullet" parent="." instance=ExtResource("5_glx4x")]
+position = Vector2(604, 201)
+direction = 1

@@ -1,4 +1,5 @@
 extends Node2D
 
 func _ready():
-	$Enemy.setup($Enemy.MovementType.LEFT_RIGHT)
+	for enemy in $Enemies.get_children():
+		enemy.setup(enemy.MovementType.RIGHT)

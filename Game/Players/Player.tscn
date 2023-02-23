@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b51q6xeg4gthp"]
+[gd_scene load_steps=17 format=3 uid="uid://b51q6xeg4gthp"]
 
 [ext_resource type="Texture2D" uid="uid://b5a8rv0532bbp" path="res://Game/Players/Blue/playerShip1_blue.png" id="1_6pm8v"]
 [ext_resource type="Script" path="res://Game/Players/Player.gd" id="1_pewy0"]
@@ -90,9 +90,26 @@ tracks/0/keys = {
 "values": [Vector2(1e-05, 1e-05), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_vm2ro"]
+resource_name = "dead"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.5, 2, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1e-05, 1e-05)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_buk0b"]
 _data = {
 "RESET": SubResource("Animation_3dthj"),
+"dead": SubResource("Animation_vm2ro"),
 "show": SubResource("Animation_vrc7q")
 }
 
@@ -114,3 +131,5 @@ libraries = {
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 position = Vector2(0, -55)
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

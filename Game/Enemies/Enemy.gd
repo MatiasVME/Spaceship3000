@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Enemy
 
+const REC_BULLET = preload("res://Game/Bullet/Bullet.tscn")
+
 @export
 var limit_left := 40
 @export
@@ -21,6 +23,12 @@ var dir := Vector2.ZERO
 var mov := Vector2.ZERO
 
 var time := 0.0
+var time_fire := 0.0
+
+var fire := false
+
+var bullet_owner := Main.BulletOwner.ENEMY
+
 
 func setup(_movement_type : MovementType):
 	movement_type = _movement_type
@@ -38,6 +46,24 @@ func _process(delta):
 			movement_right(delta)
 		MovementType.LEFT:
 			movement_left(delta)
+	
+	fire_bullets(delta)
+
+
+func fire_bullets(delta):
+	time_fire += delta
+	
+	if int(abs(time_fire)) % 5 == 0:
+		fire = true
+	
+	elif fire:
+		var inst_bullet = REC_BULLET.instantiate()
+		get_parent().add_child(inst_bullet)
+		inst_bullet.direction = inst_bullet.BulletDirection.BOTTOM
+		inst_bullet.global_position = $BulletSpawn.global_position
+		inst_bullet.bullet_owner = Main.BulletOwner.ENEMY
+		
+		fire = false
 
 
 func movement_right(delta):

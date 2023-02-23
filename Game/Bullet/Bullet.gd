@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Bullet
+
 @export var speed := 300
 
 enum BulletDirection {
@@ -9,6 +11,8 @@ enum BulletDirection {
 
 @export 
 var direction : BulletDirection
+
+var bullet_owner := Main.BulletOwner.PLAYER
 
 
 func _process(delta):
@@ -24,8 +28,11 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 
 
 func _on_area_entered(area):
-	if area is Enemy:
-		area.dead()
+	if area is Enemy and bullet_owner == Main.BulletOwner.PLAYER:
+		area.dead() # Enemy
+		dead()
+	elif area is Player and bullet_owner == Main.BulletOwner.ENEMY:
+		area.dead() # Player
 		dead()
 
 

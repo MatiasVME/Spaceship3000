@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doblp4hj5teuj"
-path="res://.godot/imported/playerLife2_blue.png-0daa5001b93b3e2935ef52ef0e6f757d.ctex"
+uid="uid://bco8ky5htd4dy"
+path="res://.godot/imported/playerLife1_red.png-3e4fd34186c7e2d5adb1c4bb2236bda8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/playerLife2_blue.png"
-dest_files=["res://.godot/imported/playerLife2_blue.png-0daa5001b93b3e2935ef52ef0e6f757d.ctex"]
+source_file="res://Game/HUD/Lives/playerLife1_red.png"
+dest_files=["res://.godot/imported/playerLife1_red.png-3e4fd34186c7e2d5adb1c4bb2236bda8.ctex"]
 
 [params]
 

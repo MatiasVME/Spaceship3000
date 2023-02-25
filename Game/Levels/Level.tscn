@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceuvey5fasnx"]
+[gd_scene load_steps=6 format=3 uid="uid://ceuvey5fasnx"]
 
 [ext_resource type="Script" path="res://Game/Levels/Level.gd" id="1_jo8yb"]
 [ext_resource type="PackedScene" uid="uid://b51q6xeg4gthp" path="res://Game/Players/Player.tscn" id="1_k2ab8"]
 [ext_resource type="Texture2D" uid="uid://yydgi7xwjmrp" path="res://Art/blue.png" id="2_mewyh"]
 [ext_resource type="PackedScene" uid="uid://bvd4isox7pe3i" path="res://Game/Enemies/Enemy.tscn" id="2_mfgu1"]
+[ext_resource type="PackedScene" uid="uid://7d76tlg2ifhc" path="res://Game/HUD/HUD.tscn" id="5_fbup6"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jo8yb")
@@ -75,3 +76,5 @@ limit_right = 600
 position = Vector2(438, 265)
 limit_left = 440
 limit_right = 600
+
+[node name="HUD" parent="." instance=ExtResource("5_fbup6")]

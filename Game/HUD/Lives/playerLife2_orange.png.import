@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp865gbgpydrr"
-path="res://.godot/imported/playerLife2_orange.png-91992f9b6465e5eb836f90799492480b.ctex"
+path="res://.godot/imported/playerLife2_orange.png-0189b9f62d0abe258466edc40ad8daf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/playerLife2_orange.png"
-dest_files=["res://.godot/imported/playerLife2_orange.png-91992f9b6465e5eb836f90799492480b.ctex"]
+source_file="res://Game/HUD/Lives/playerLife2_orange.png"
+dest_files=["res://.godot/imported/playerLife2_orange.png-0189b9f62d0abe258466edc40ad8daf9.ctex"]
 
 [params]
 

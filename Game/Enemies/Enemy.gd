@@ -28,6 +28,12 @@ var time_fire := 0.0
 var fire := false
 
 var bullet_owner := Main.BulletOwner.ENEMY
+var rand_number
+
+
+func _ready():
+	randomize()
+	rand_number = randi_range(5, 15)
 
 
 func setup(_movement_type : MovementType):
@@ -53,16 +59,20 @@ func _process(delta):
 func fire_bullets(delta):
 	time_fire += delta
 	
-	if int(abs(time_fire)) % 5 == 0:
+	if time_fire > rand_number:
 		fire = true
 	
-	elif fire:
+	if fire:
 		var inst_bullet = REC_BULLET.instantiate()
 		get_parent().add_child(inst_bullet)
 		inst_bullet.direction = inst_bullet.BulletDirection.BOTTOM
 		inst_bullet.global_position = $BulletSpawn.global_position
 		inst_bullet.bullet_owner = Main.BulletOwner.ENEMY
 		
+		rand_number = randi_range(5, 15)
+		print(rand_number)
+		
+		time_fire = 0
 		fire = false
 
 

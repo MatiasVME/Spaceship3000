@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cch5yoll5ahn3"
-path="res://.godot/imported/playerLife3_orange.png-c9f6ef19516e637d11c34aad1f4df951.ctex"
+uid="uid://dai7kmc2ucmvc"
+path="res://.godot/imported/playerLife1_green.png-5c95c0262348498d867afcbe9827a381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/playerLife3_orange.png"
-dest_files=["res://.godot/imported/playerLife3_orange.png-c9f6ef19516e637d11c34aad1f4df951.ctex"]
+source_file="res://Game/HUD/Lives/playerLife1_green.png"
+dest_files=["res://.godot/imported/playerLife1_green.png-5c95c0262348498d867afcbe9827a381.ctex"]
 
 [params]
 

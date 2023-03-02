@@ -1,30 +1,29 @@
 extends CanvasLayer
 
-var lives := 3:
+var lives := 0:
 	set(value):
-		if value < lives:
-			var tween = get_tree().create_tween()
-			get_node("Control/Lives/Live" + str(value)).scale = Vector2.ZERO
-			tween.tween_property(get_node("Control/Lives/Live" + str(value)), 
+		var current_node = get_node("Control/VBox/HeaderBG/Lives/Live" + str(value))
+		var tween = get_tree().create_tween()
+		
+		if value > lives:
+			tween.tween_property(
+				current_node, 
 				"scale", 
 				Vector2.ONE, 
-				0.8
-			)
-			get_node("Control/Lives/Live" + str(value)).show()
-			tween.play()
-		elif value > lives:
-			var tween = get_tree().create_tween()
-			get_node("Control/Lives/Live" + str(value)).scale = Vector2.ONE
-			tween.tween_property(get_node("Control/Lives/Live" + str(value)), 
+				0.4
+			).from(Vector2.ZERO).set_trans(Tween.TRANS_BOUNCE)
+			tween.tween_callback(current_node.show)
+			current_node.show()
+		elif value < lives:
+			current_node.scale = Vector2.ONE
+			tween.tween_property(
+				current_node, 
 				"scale", 
 				Vector2.ZERO, 
-				0.8
-			)
-			await get_node("Control/Lives/Live" + str(value)).hidden
-			tween.play()
-			
+				0.4
+			).from(Vector2.ONE).set_trans(Tween.TRANS_BOUNCE)
+			tween.tween_callback(current_node.hide)
+			current_node.hide()
+		
 		lives = value
-
-func reset_lives():
-	lives = 1
-	
+		Main.lives = value

@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Main="*res://Autoloads/Main.gd"
+Signals="*res://Autoloads/Signals.gd"
+Curtain="*res://Autoloads/Curtain.tscn"
 
 [display]
 

@@ -70,7 +70,6 @@ func fire_bullets(delta):
 		inst_bullet.bullet_owner = Main.BulletOwner.ENEMY
 		
 		rand_number = randi_range(5, 15)
-		print(rand_number)
 		
 		time_fire = 0
 		fire = false

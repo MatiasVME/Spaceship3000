@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp2twljptvbre"]
+
+[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://Backgrounds/black.png" id="1_gaphf"]
+[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://Fonts/kenvector_future.ttf" id="2_4mm8o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvpkq"]
+font = ExtResource("2_4mm8o")
+font_size = 52
+font_color = Color(0, 0.74902, 0.74902, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gaphf")
+stretch_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="Center"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_qvpkq")

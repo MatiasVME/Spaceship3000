@@ -25,37 +25,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Lives" type="HBoxContainer" parent="Control"]
-custom_minimum_size = Vector2(200, 0)
+[node name="VBox" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.278
-anchor_bottom = 0.056
-offset_right = -0.160019
-offset_bottom = -2.32
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Live1" type="TextureRect" parent="Control/Lives"]
+[node name="HeaderBG" type="ColorRect" parent="Control/VBox"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_horizontal = 0
-texture = SubResource("AnimatedTexture_l0cqv")
-expand_mode = 2
-stretch_mode = 3
+color = Color(0, 0, 0, 0.784314)
 
-[node name="Live2" type="TextureRect" parent="Control/Lives"]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = SubResource("AnimatedTexture_l0cqv")
-expand_mode = 2
-stretch_mode = 3
+[node name="Lives" type="HBoxContainer" parent="Control/VBox/HeaderBG"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Live3" type="TextureRect" parent="Control/Lives"]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = SubResource("AnimatedTexture_l0cqv")
-expand_mode = 2
-stretch_mode = 3
-
-[node name="Live4" type="TextureRect" parent="Control/Lives"]
+[node name="Live1" type="TextureRect" parent="Control/VBox/HeaderBG/Lives"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -63,7 +55,31 @@ texture = SubResource("AnimatedTexture_l0cqv")
 expand_mode = 2
 stretch_mode = 3
 
-[node name="Live5" type="TextureRect" parent="Control/Lives"]
+[node name="Live2" type="TextureRect" parent="Control/VBox/HeaderBG/Lives"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_l0cqv")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Live3" type="TextureRect" parent="Control/VBox/HeaderBG/Lives"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_l0cqv")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Live4" type="TextureRect" parent="Control/VBox/HeaderBG/Lives"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_l0cqv")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Live5" type="TextureRect" parent="Control/VBox/HeaderBG/Lives"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0

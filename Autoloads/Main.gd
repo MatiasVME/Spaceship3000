@@ -26,5 +26,4 @@ func _ready():
 
 
 func _on_game_over():
-	Curtain.change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")
-	pass
+	get_tree().change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")

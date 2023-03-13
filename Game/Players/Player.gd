@@ -45,8 +45,9 @@ func fire_bullets():
 func dead():
 	if not $Anim.is_playing() and one_time_dead:
 		$Anim.play("dead")
-		Signals.game_over.emit() ####
 		one_time_dead = false
+		
+		Signals.dead.emit(Main.lives - 1)
 
 
 func _on_anim_animation_finished(anim_name):

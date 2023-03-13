@@ -24,6 +24,8 @@ var lives := 1:
 func _ready():
 	Signals.game_over.connect(_on_game_over)
 
+func game_over():
+	_on_game_over()
 
 func _on_game_over():
-	get_tree().change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")
+	Curtain.change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")

@@ -19,7 +19,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_csg6p"]
 resource_name = "show"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,7 +27,7 @@ tracks/0/path = NodePath("Background:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -40,6 +40,7 @@ _data = {
 }
 
 [node name="Curtain" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +59,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "show"
 libraries = {
 "": SubResource("AnimationLibrary_70duv")
 }

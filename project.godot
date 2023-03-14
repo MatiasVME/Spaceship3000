@@ -17,8 +17,8 @@ config/icon="res://Icon.png"
 
 [autoload]
 
-Main="*res://Autoloads/Main.gd"
 Signals="*res://Autoloads/Signals.gd"
+Main="*res://Autoloads/Main.gd"
 Curtain="*res://Autoloads/Curtain.tscn"
 
 [display]

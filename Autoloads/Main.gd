@@ -10,7 +10,7 @@ enum BulletOwner {
 
 var current_level := 1
 
-var lives := 1:
+var lives :
 	set(value):
 		if value >= MAX_LIVES:
 			lives = MAX_LIVES

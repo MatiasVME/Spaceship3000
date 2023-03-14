@@ -100,6 +100,8 @@ func movement_left(delta):
 
 
 func dead():
+	Main.lives += 1
+	print(Main.lives)
 	$Anim.play("destroy")
 
 

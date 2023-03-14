@@ -1,10 +1,10 @@
-extends CanvasLayer
+extends Control
 
-@onready var nlives = $Control/VBox/HeaderBG/Lives
+@onready var nlives = $VBox/HeaderBG/Lives
 
 var lives := 0:
 	set(value):
-		if value == 0:
+		if value <= 0:
 			lives = value
 			Main.lives = value
 			Main.game_over()

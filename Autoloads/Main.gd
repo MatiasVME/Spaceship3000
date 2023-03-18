@@ -10,9 +10,9 @@ enum BulletOwner {
 
 var current_level := 1
 
-var lives :
+var lives := 0:
 	set(value):
-		if value >= MAX_LIVES:
+		if lives >= MAX_LIVES:
 			lives = MAX_LIVES
 		elif value <= MIN_LIVES:
 			lives = MIN_LIVES
@@ -20,12 +20,5 @@ var lives :
 		else:
 			lives = value
 			Signals.gain_live.emit()
-
-func _ready():
-	Signals.game_over.connect(_on_game_over)
-
-func game_over():
-	_on_game_over()
-
-func _on_game_over():
-	Curtain.change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")
+		
+		print_debug(value)

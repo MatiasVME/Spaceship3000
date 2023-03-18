@@ -2,7 +2,7 @@ extends Control
 
 @onready var nlives = $VBox/HeaderBG/Lives
 
-var lives := 0:
+var lives := 1:
 	set(value):
 		if value <= 0:
 			lives = value
@@ -11,7 +11,16 @@ var lives := 0:
 		var current_node = nlives.get_node("Live" + str(value))
 		var tween = get_tree().create_tween()
 		
-		if value > lives: 
+		if value < lives:
+			tween.tween_property(
+				current_node, 
+				"scale", 
+				Vector2.ZERO, 
+				0.4
+			).from(Vector2.ONE).set_trans(Tween.TRANS_BOUNCE)
+			await tween.finished
+			current_node.hide()
+		elif value > lives: 
 			tween.tween_property(
 				current_node, 
 				"scale", 
@@ -19,14 +28,6 @@ var lives := 0:
 				0.4
 			).from(Vector2.ZERO).set_trans(Tween.TRANS_BOUNCE)
 			current_node.show()
-		elif value < lives:
-			tween.tween_property(
-				current_node, 
-				"scale", 
-				Vector2.ZERO, 
-				0.4
-			).from(Vector2.ONE).set_trans(Tween.TRANS_BOUNCE)
-			current_node.hide()
 		
 		lives = value
 
@@ -41,6 +42,5 @@ func _on_gain_live():
 
 
 func _on_dead():
-	# NOTA: Cuando quito una vida con la tecla "-" no pasa por acá
 	lives -= 1
 

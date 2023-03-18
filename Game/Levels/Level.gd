@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
 	create_enemies()
 	
+	Main.lives = 1
+	
 	Signals.dead.connect(_on_dead)
 	Signals.game_over.connect(_on_game_over)
 

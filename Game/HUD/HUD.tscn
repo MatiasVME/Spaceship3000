@@ -45,14 +45,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Live0" type="TextureRect" parent="VBox/HeaderBG/Lives"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-texture = SubResource("AnimatedTexture_l0cqv")
-expand_mode = 2
-stretch_mode = 3
-
 [node name="Live1" type="TextureRect" parent="VBox/HeaderBG/Lives"]
 visible = false
 layout_mode = 2
@@ -78,6 +70,14 @@ expand_mode = 2
 stretch_mode = 3
 
 [node name="Live4" type="TextureRect" parent="VBox/HeaderBG/Lives"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_l0cqv")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Live5" type="TextureRect" parent="VBox/HeaderBG/Lives"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0

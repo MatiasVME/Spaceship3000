@@ -10,9 +10,9 @@ enum BulletOwner {
 
 var current_level := 1
 
-var lives := 0:
+var lives := 1:
 	set(value):
-		if value >= MAX_LIVES:
+		if value > MAX_LIVES:
 			lives = MAX_LIVES
 		elif value <= MIN_LIVES:
 			lives = MIN_LIVES
@@ -20,8 +20,8 @@ var lives := 0:
 		elif value > lives:
 			lives = value
 			Signals.gain_live.emit()
-		elif value <= lives:
+		elif value < lives:
 			lives = value
 			Signals.dead.emit()
 		
-		print_debug(value)
+		print_debug(lives)

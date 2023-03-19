@@ -6,7 +6,6 @@ func _ready():
 	Main.lives = 1
 	
 	Signals.dead.connect(_on_dead)
-	Signals.game_over.connect(_on_game_over)
 
 
 func _input(event):
@@ -23,7 +22,3 @@ func create_enemies():
 
 func _on_dead(lives):
 	$HUD.lives = lives
-
-
-func _on_game_over():
-	Curtain.change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")

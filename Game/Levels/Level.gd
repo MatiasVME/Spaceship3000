@@ -1,13 +1,14 @@
 extends Node2D
 
 const REC_PLAYER = preload("res://Game/Players/Player.tscn")
+const REC_ENEMY = preload("res://Game/Enemies/Enemy.tscn")
 
 const INITAL_POS = Vector2(360, 670)
 
 
 func _ready():
-	create_enemies()
-	player_spawn()
+	spawn_enemies()
+	spawn_player()
 	
 	Main.lives = 1
 	
@@ -22,16 +23,34 @@ func _input(event):
 		Main.lives -= 1
 
 
-func player_spawn():
+func spawn_player():
 	var new_player = REC_PLAYER.instantiate()
 	add_child(new_player)
 	new_player.global_position = INITAL_POS
 
 
-func create_enemies():
-	for enemy in $Enemies.get_children():
-		enemy.setup(enemy.MovementType.RIGHT)
+func spawn_enemies():
+#	for enemy in $Enemies.get_children():
+#		enemy.setup(enemy.MovementType.RIGHT)
+	
+	var x_increment := 138
+	var y_increment := 0
+	
+	for i in 3:
+		y_increment += 100
+		
+		for j in 3:
+			var enemy = REC_ENEMY.instantiate()
+			add_child(enemy)
+			enemy.global_position.x = x_increment
+			enemy.global_position.y = y_increment
+			enemy.setup(enemy.MovementType.RIGHT)
+			x_increment += 100
+			
+			print(enemy.global_position, enemy.limit_left, enemy.limit_right)
+		
+		x_increment = 138
 
 
 func _on_dead():
-	player_spawn()
+	spawn_player()

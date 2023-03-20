@@ -4,10 +4,12 @@ class_name Enemy
 
 const REC_BULLET = preload("res://Game/Bullet/Bullet.tscn")
 
+const GET_LIVES_PROB = 20
+
 @export
-var limit_left := 40
+var limit_left : int
 @export
-var limit_right := 300
+var limit_right : int
 
 enum MovementType {
 	RIGHT,
@@ -38,6 +40,9 @@ func _ready():
 
 func setup(_movement_type : MovementType):
 	movement_type = _movement_type
+	
+	limit_left = global_position.x - 40
+	limit_right = global_position.x + 300
 	
 	match movement_type:
 		MovementType.RIGHT:
@@ -105,7 +110,7 @@ func dead():
 
 func _on_anim_animation_finished(anim_name):
 	if anim_name == "destroy":
-		if (randi() % 20) == 1:
+		if (randi() % GET_LIVES_PROB + 1) == 1:
 			Main.lives += 1
 		
 		queue_free()

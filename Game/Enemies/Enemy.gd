@@ -105,4 +105,7 @@ func dead():
 
 func _on_anim_animation_finished(anim_name):
 	if anim_name == "destroy":
+		if (randi() % 20) == 1:
+			Main.lives += 1
+		
 		queue_free()

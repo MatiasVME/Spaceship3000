@@ -2,7 +2,6 @@ extends Control
 
 const REC_LIVE = preload("res://Game/HUD/Lives/live.tscn")
 
-@onready var nlives = $VBox/HeaderBG/Lives
 
 # Vidas del HUD
 var lives := 1:

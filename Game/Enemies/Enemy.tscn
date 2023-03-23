@@ -155,7 +155,7 @@ _data = {
 "show": SubResource("Animation_or3bg")
 }
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="Area2D" groups=["Enemy"]]
 script = ExtResource("1_dqgwq")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]

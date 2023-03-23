@@ -6,3 +6,5 @@ signal dead()
 signal gain_live()
 
 signal game_over()
+
+signal enemy_dead(enemy_amount)

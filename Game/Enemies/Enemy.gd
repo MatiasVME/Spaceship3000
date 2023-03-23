@@ -105,6 +105,8 @@ func movement_left(delta):
 
 
 func dead():
+	Signals.enemy_dead.emit(get_tree().get_nodes_in_group("Enemy").size())
+	
 	$Anim.play("destroy")
 
 

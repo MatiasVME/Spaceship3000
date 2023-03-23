@@ -23,8 +23,6 @@ var lives := 1:
 		elif value < lives:
 			lives = value
 			Signals.dead.emit()
-		
-		print_debug(lives)
 
 
 func _ready():
@@ -32,4 +30,4 @@ func _ready():
 
 
 func _on_game_over():
-	Curtain.change_scene_to_file("res://MainScreens/GameOver/GameOver.tscn")
+	Curtain.change_scene_to_file("res://UI/MainScreens/GameOver/GameOver.tscn")

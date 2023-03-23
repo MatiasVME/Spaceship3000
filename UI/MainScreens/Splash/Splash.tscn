@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://csdmur7fhb733"]
+[gd_scene load_steps=5 format=3 uid="uid://b3t8kd61wjitq"]
 
-[ext_resource type="Script" path="res://MainScreens/Splash/Splash.gd" id="1_xipwu"]
-[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://Backgrounds/black.png" id="2_n6gba"]
-[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://Fonts/kenvector_future.ttf" id="3_27lam"]
+[ext_resource type="Script" path="res://UI/MainScreens/Splash/Splash.gd" id="1_xipwu"]
+[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://UI/Backgrounds/black.png" id="2_n6gba"]
+[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://UI/Fonts/kenvector_future.ttf" id="3_27lam"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_83vhw"]
 font = ExtResource("3_27lam")

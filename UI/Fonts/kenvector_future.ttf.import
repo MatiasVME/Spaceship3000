@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d4lwwgbtr4u4d"
-path="res://.godot/imported/kenvector_future.ttf-c5a91786f0709420de38d58d8c1dba53.fontdata"
+path="res://.godot/imported/kenvector_future.ttf-a462d8ce92decf540e819ca4239b931c.fontdata"
 
 [deps]
 
-source_file="res://Fonts/kenvector_future.ttf"
-dest_files=["res://.godot/imported/kenvector_future.ttf-c5a91786f0709420de38d58d8c1dba53.fontdata"]
+source_file="res://UI/Fonts/kenvector_future.ttf"
+dest_files=["res://.godot/imported/kenvector_future.ttf-a462d8ce92decf540e819ca4239b931c.fontdata"]
 
 [params]
 
@@ -27,7 +27,13 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
+}]
 language_support={}
 script_support={}
 opentype_features={}

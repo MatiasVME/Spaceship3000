@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Bullet
 
-@export var speed := 300
+@export var speed := 600
 
 enum BulletDirection {
 	TOP,

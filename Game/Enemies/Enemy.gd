@@ -82,8 +82,6 @@ func fire_bullets(delta):
 		
 		time_fire = 0
 		fire = false
-		
-		print(rand_number)
 
 
 func movement_right(delta):

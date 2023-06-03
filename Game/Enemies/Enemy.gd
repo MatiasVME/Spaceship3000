@@ -19,7 +19,8 @@ enum MovementType {
 @export
 var movement_type : MovementType
 
-var speed := 100
+
+var speed := 150
 
 var dir := Vector2.ZERO
 var mov := Vector2.ZERO
@@ -74,10 +75,15 @@ func fire_bullets(delta):
 		inst_bullet.global_position = $BulletSpawn.global_position
 		inst_bullet.bullet_owner = Main.BulletOwner.ENEMY
 		
-		rand_number = randi_range(5, 15)
+		rand_number = randf_range(
+			clamp(5 - Main.level * 1.05, 0.5, 6.0), 
+			clamp(20 - Main.level * 1.1, 2, 20)
+		)
 		
 		time_fire = 0
 		fire = false
+		
+		print(rand_number)
 
 
 func movement_right(delta):
@@ -105,8 +111,7 @@ func movement_left(delta):
 
 
 func dead():
-	Signals.enemy_dead.emit(get_tree().get_nodes_in_group("Enemy").size())
-	
+	$Collision.set_deferred("disabled", true)
 	$Anim.play("destroy")
 
 
@@ -115,4 +120,5 @@ func _on_anim_animation_finished(anim_name):
 		if (randi() % GET_LIVES_PROB + 1) == 1:
 			Main.lives += 1
 		
+		Main.score += 5
 		queue_free()

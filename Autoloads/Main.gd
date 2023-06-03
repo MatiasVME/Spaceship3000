@@ -1,14 +1,25 @@
 extends Node
 
+
 const MAX_LIVES = 5
 const MIN_LIVES = 0
+
 
 enum BulletOwner {
 	ENEMY,
 	PLAYER
 }
 
+
 var current_level := 1
+var score := 0:
+	set(value):
+		score = value
+		Signals.enemy_dead.emit(value)
+	get:
+		return score
+var level := 1
+
 
 var lives := 1:
 	set(value):

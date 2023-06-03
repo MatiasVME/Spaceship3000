@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const REC_PLAYER = preload("res://Game/Players/Player.tscn")
 const REC_ENEMY = preload("res://Game/Enemies/Enemy.tscn")
 
@@ -13,7 +14,6 @@ func _ready():
 	Main.lives = 1
 	
 	Signals.dead.connect(_on_dead)
-	Signals.enemy_dead.connect(_on_enemy_dead)
 
 
 func _input(event):
@@ -39,7 +39,7 @@ func spawn_enemies():
 		
 		for j in 3:
 			var enemy = REC_ENEMY.instantiate()
-			add_child(enemy)
+			$Enemies.add_child(enemy)
 			
 			enemy.global_position.x = x_increment
 			enemy.global_position.y = y_increment
@@ -54,9 +54,7 @@ func _on_dead():
 	spawn_player()
 
 
-func _on_enemy_dead(enemy_amount):
-	if enemy_amount == 1:
-		await get_tree().create_timer(2.0).timeout
+func _on_timer_timeout():
+	if $Enemies.get_child_count() == 0:
+		Main.level += 1
 		spawn_enemies()
-
-

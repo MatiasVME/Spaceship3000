@@ -13,6 +13,7 @@ var lives := 1:
 func _ready():
 	Signals.gain_live.connect(_on_gain_live)
 	Signals.dead.connect(_on_dead)
+	Signals.enemy_dead.connect(_on_enemy_dead)
 	
 	lives_increase()
 
@@ -59,4 +60,8 @@ func _on_gain_live():
 
 func _on_dead():
 	lives -= 1
+
+
+func _on_enemy_dead(score):
+	%Score.text = str("SCORE: ", Main.score)
 

@@ -65,3 +65,22 @@ func _on_dead():
 func _on_enemy_dead(score):
 	%Score.text = str("SCORE: ", Main.score)
 
+
+func _on_menu_pressed():
+	if $VBox/HeaderBG/HBox/Menu.button_pressed:
+		$GameMenu.show()
+		get_tree().paused = true
+	else:
+		$GameMenu.hide()
+		get_tree().paused = false
+
+
+func _on_resume_pressed():
+	$VBox/HeaderBG/HBox/Menu.button_pressed = false
+	$GameMenu.hide()
+	get_tree().paused = false
+
+
+func _on_exit_pressed():
+	get_tree().paused = false
+	Curtain.change_scene_to_file("res://UI/MainScreens/GameOver/GameOver.tscn")

@@ -46,6 +46,7 @@ func fire_bullets(delta):
 		get_parent().add_child(inst_bullet)
 		inst_bullet.direction = inst_bullet.BulletDirection.TOP
 		inst_bullet.global_position = $BulletSpawn.global_position
+		$Laser.play()
 		
 		time = 0.0
 
@@ -56,6 +57,7 @@ func dead():
 		one_time_dead = false
 		
 		Main.lives -= 1
+		$Explosion.play()
 
 
 func _on_anim_animation_finished(anim_name):

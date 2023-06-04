@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://caqm3mnfdkd3"]
+[gd_scene load_steps=31 format=3 uid="uid://caqm3mnfdkd3"]
 
 [ext_resource type="Script" path="res://Game/Enemies/Enemy.gd" id="1_dqgwq"]
 [ext_resource type="Texture2D" uid="uid://b6ekc8u7p3l6i" path="res://Game/Enemies/EnemySkin/enemyBlack1.png" id="2_q8vpd"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b4hps66h86blx" path="res://Game/Enemies/EnemySkin/enemyRed3.png" id="19_2k1ge"]
 [ext_resource type="Texture2D" uid="uid://dyn7rvo366i0d" path="res://Game/Enemies/EnemySkin/enemyRed4.png" id="20_03fp3"]
 [ext_resource type="Texture2D" uid="uid://6xpqnvyx33do" path="res://Game/Enemies/EnemySkin/enemyRed5.png" id="21_hfp36"]
+[ext_resource type="AudioStream" uid="uid://bwap2p75kb4ja" path="res://Sounds/SFX/EnemyDead.ogg" id="22_r08fn"]
+[ext_resource type="AudioStream" uid="uid://dqdfrfk7n2qlq" path="res://Sounds/SFX/EnemyLaser.ogg" id="23_eljx0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rdbtg"]
 animations = [{
@@ -155,6 +157,19 @@ _data = {
 "show": SubResource("Animation_or3bg")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gc7lf"]
+streams_count = 1
+playback_mode = 1
+random_volume_offset_db = 3.81
+stream_0/stream = ExtResource("22_r08fn")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ro4mc"]
+streams_count = 1
+playback_mode = 1
+stream_0/stream = ExtResource("23_eljx0")
+stream_0/weight = 1.0
+
 [node name="Enemy" type="Area2D" groups=["Enemy"]]
 script = ExtResource("1_dqgwq")
 
@@ -174,5 +189,11 @@ libraries = {
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 position = Vector2(0, 39)
+
+[node name="EnemyDead" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_gc7lf")
+
+[node name="EnemyLaser" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ro4mc")
 
 [connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

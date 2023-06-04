@@ -14,6 +14,8 @@ func _ready():
 	Main.lives = 1
 	
 	Signals.dead.connect(_on_dead)
+	
+	$LevelMusic.play()
 
 
 func _input(event):

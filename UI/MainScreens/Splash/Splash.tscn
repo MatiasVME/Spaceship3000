@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3t8kd61wjitq"]
+[gd_scene load_steps=6 format=3 uid="uid://b3t8kd61wjitq"]
 
 [ext_resource type="Script" path="res://UI/MainScreens/Splash/Splash.gd" id="1_xipwu"]
 [ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://UI/Backgrounds/black.png" id="2_n6gba"]
 [ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://UI/Fonts/kenvector_future.ttf" id="3_27lam"]
+[ext_resource type="AudioStream" uid="uid://dgr1yso65xnnl" path="res://Sounds/BGM/Intro.ogg" id="4_6qwwc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_83vhw"]
 font = ExtResource("3_27lam")
@@ -48,3 +49,7 @@ text = "THE COMPANY
 NAME"
 label_settings = SubResource("LabelSettings_83vhw")
 horizontal_alignment = 1
+
+[node name="SplashMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6qwwc")
+autoplay = true

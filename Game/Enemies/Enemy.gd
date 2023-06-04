@@ -76,11 +76,12 @@ func fire_bullets(delta):
 		inst_bullet.bullet_owner = Main.BulletOwner.ENEMY
 		
 		rand_number = randf_range(
-			clamp(5 - Main.level * 1.05, 0.5, 6.0), 
-			clamp(20 - Main.level * 1.1, 2, 20)
+			clamp(3 - Main.level * 1.05, 0.5, 6.0), 
+			clamp(15 - Main.level * 1.1, 2, 20)
 		)
 		
 		time_fire = 0
+		$EnemyLaser.play()
 		fire = false
 
 
@@ -111,6 +112,7 @@ func movement_left(delta):
 func dead():
 	$Collision.set_deferred("disabled", true)
 	$Anim.play("destroy")
+	$EnemyDead.play()
 
 
 func _on_anim_animation_finished(anim_name):

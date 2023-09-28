@@ -93,6 +93,7 @@ vertical_alignment = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hfp72")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="Center/VBox/Play" to="." method="_on_play_pressed"]
